@@ -1,0 +1,3 @@
+Frontend URL: https://felicity-frontend-inky.vercel.app
+Backend API URL: https://felicity-backend-rqat.onrender.com/
+MongoDB Atlas Connection: mongodb+srv://samyakjain2416_db_user:****@cluster0.tb1nga4.mongodb.net/?appName=Cluster0
