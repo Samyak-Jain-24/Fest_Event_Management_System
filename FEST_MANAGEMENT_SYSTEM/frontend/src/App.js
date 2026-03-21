@@ -1,5 +1,7 @@
 import React from 'react';
+// Importing React Router components for client-side navigation and routing capabilities
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+// Importing ToastContainer for global toast notifications across the app
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './context/AuthContext';
