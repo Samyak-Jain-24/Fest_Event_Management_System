@@ -21,6 +21,7 @@ const calendarRoutes = require('./routes/calendarRoutes');
 
 // Initialize the Express application instance
 // This serves as the main entry point for configuring our API server
+// Application instance initialized
 const app = express();
 
 // Connect to database
