@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 // @desc    Get participant profile
 // @route   GET /api/participants/profile
 // @access  Private (Participant)
+// Fetch dynamic participant user data securely
 const getProfile = async (req, res) => {
   try {
     const participant = await Participant.findById(req.user._id)
