@@ -7,6 +7,8 @@ import { toast } from 'react-toastify';
 const OrganizerDashboard = () => {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
+  
+  // Dashboard state management
   const [events, setEvents] = useState([]);
   const [analytics, setAnalytics] = useState(null);
   const [loading, setLoading] = useState(true);
