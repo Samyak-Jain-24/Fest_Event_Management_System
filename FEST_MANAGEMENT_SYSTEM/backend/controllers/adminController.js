@@ -7,6 +7,7 @@ const crypto = require('crypto');
 // @desc    Create new organizer account
 // @route   POST /api/admin/organizers
 // @access  Private (Admin)
+// Secure admin access to provision new organizers
 const createOrganizer = async (req, res) => {
   try {
     const { organizerName, email, category, description, contactEmail, contactNumber } = req.body;
