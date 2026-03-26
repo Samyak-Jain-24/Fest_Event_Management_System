@@ -10,6 +10,12 @@ const crypto = require('crypto');
 // @desc    Register a new participant
 // @route   POST /api/auth/register/participant
 // @access  Public
+/**
+ * Handles the registration of a new participant in the system.
+ * Validates the participant information, specifically checking for domain
+ * requirements (e.g., IIIT domains for IIIT participants).
+ * Ensures data integrity before creating a new database record.
+ */
 const registerParticipant = async (req, res) => {
   try {
     const {
@@ -24,8 +30,12 @@ const registerParticipant = async (req, res) => {
       areasOfInterest,
     } = req.body;
 
+    // Log the registration attempt for debugging and audit purposes
+    console.log(`[Auth API] Registration attempt for email: ${email}, type: ${participantType}`);
+
     // Validate IIIT email for IIIT participants
     if (participantType === 'IIIT' && !email.endsWith('@students.iiit.ac.in') && !email.endsWith('@research.iiit.ac.in')) {
+      console.warn(`[Auth API] Invalid email domain for IIIT participant: ${email}`);
       return res.status(400).json({
         message: 'IIIT participants must use IIIT-issued email ID (@students.iiit.ac.in or @research.iiit.ac.in)',
       });
