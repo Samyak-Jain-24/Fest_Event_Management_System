@@ -11,6 +11,11 @@ const Fuse = require('fuse.js');
 // @desc    Get all events (with filters and search)
 // @route   GET /api/events
 // @access  Public
+/**
+ * Retrieves a list of events based on various query parameters.
+ * Supports filtering by event type, eligibility, date ranges, and tags.
+ * Also includes search functionality using Fuse.js for better matching.
+ */
 const getEvents = async (req, res) => {
   try {
     const {
@@ -25,6 +30,7 @@ const getEvents = async (req, res) => {
       trending,
     } = req.query;
 
+    // Initialize the base query object targeting published events
     let query = { status: 'Published' };
 
     // Filter by event type
