@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const validator = require('validator');
 
+// Define the Admin Schema for the database collection
+// This strictly structures the administrative user records
 const adminSchema = new mongoose.Schema(
   {
     email: {
@@ -12,10 +14,10 @@ const adminSchema = new mongoose.Schema(
       validate: [validator.isEmail, 'Please provide a valid email'],
     },
     password: {
-      type: String,
+      type: String, // Stored as a hash
       required: [true, 'Password is required'],
       minlength: 6,
-      select: false,
+      select: false, // Ensures password isn't leaked in queries by default
     },
     role: {
       type: String,
