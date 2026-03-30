@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// Dynamic form field schema used embedded within Event entries
+// This defines the dynamic inputs required from participants when registering
 const formFieldSchema = new mongoose.Schema({
   fieldType: {
     type: String,
@@ -19,7 +21,7 @@ const formFieldSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  options: [String], // For dropdown, checkbox, radio
+  options: [String], // Array of valid selections for multi-choice fields (dropdown, checkbox, radio)
   validation: {
     min: Number,
     max: Number,
