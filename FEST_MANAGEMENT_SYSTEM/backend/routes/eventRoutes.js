@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+// Import handlers from the event controller
 const {
   getEvents,
   getEventById,
@@ -8,6 +9,7 @@ const {
   deleteEvent,
   getOrganizerEvents,
 } = require('../controllers/eventController');
+// Import required authentication and authorization middleware middlewares
 const { protect, authorize, checkOrganizerActive, optionalAuth } = require('../middleware/auth');
 
 // Public routes (with optional auth for personalized data)
