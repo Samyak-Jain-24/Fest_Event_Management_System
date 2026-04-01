@@ -4,10 +4,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 // Importing ToastContainer for global toast notifications across the app
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+// Context Providers and HOCs
 import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
 
-// Common pages
+// Common Application Pages
 import Login from './pages/common/Login';
 import ParticipantRegister from './pages/common/ParticipantRegister';
 import Home from './pages/common/Home';
