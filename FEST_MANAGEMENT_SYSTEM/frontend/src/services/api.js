@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// Configure foundational API bindings
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 const api = axios.create({
@@ -9,7 +10,7 @@ const api = axios.create({
   },
 });
   
-// Add auth token to requests
+// Request interceptors configuration to ensure JWT authorization
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
