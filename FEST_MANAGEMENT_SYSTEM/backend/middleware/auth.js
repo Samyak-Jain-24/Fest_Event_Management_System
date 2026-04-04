@@ -3,11 +3,14 @@ const Participant = require('../models/Participant');
 const Organizer = require('../models/Organizer');
 const Admin = require('../models/Admin');
 
-// Protect routes - verify JWT token
+/**
+ * Protect routes by verifying JWT tokens from headers
+ * Retrieves user based on role payload and caches on request object
+ */
 const protect = async (req, res, next) => {
   let token;
 
-  // Check for token in headers
+  // Check for token in headers Authorization: Bearer <token>
   if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
     try {
       // Get token from header
