@@ -1,6 +1,11 @@
-// Error handling middleware
+/**
+ * Global Error Handling Middleware
+ * Captures unhandled backend exceptions and returns standardized JSON responses.
+ * Detects common failure patterns such as: Mongoose failures, Dup Keys, JWT faults.
+ */
 const errorHandler = (err, req, res, next) => {
-  console.error('Error:', err);
+  // Log stack traces to server console for debugging infrastructure
+  console.error('[System Error Caught]:', err);
 
   // Mongoose bad ObjectId
   if (err.name === 'CastError') {
