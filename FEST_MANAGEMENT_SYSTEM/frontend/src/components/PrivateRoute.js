@@ -2,6 +2,10 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
+/**
+ * Higher Order Component (HOC) guarding restricted application routes
+ * Validates authentication status and checks role-based access controls
+ */
 const PrivateRoute = ({ children, allowedRoles }) => {
   const { isAuthenticated, role, loading } = useAuth();
 
