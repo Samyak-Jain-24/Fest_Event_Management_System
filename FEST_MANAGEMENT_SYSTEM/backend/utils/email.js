@@ -1,11 +1,15 @@
 const nodemailer = require('nodemailer');
 
-// Create transporter
+/**
+ * Utility: Email Transporter Dispatch Factory
+ * Generates an SMTP instance customized to environmental configurations
+ * Enables TLS by default when port 465 is provided
+ */
 const createTransporter = () => {
   const port = parseInt(process.env.EMAIL_PORT) || 465;
-  const secure = port === 465; // true for 465, false for 587
+  const secure = port === 465; // Use implicit TLS for port 465
 
-  console.log('Creating email transporter with:', {
+  console.log('[EmailService] Initializing transporter configurations:', {
     host: process.env.EMAIL_HOST,
     port: port,
     secure: secure,
