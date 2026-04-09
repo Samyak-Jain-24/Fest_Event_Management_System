@@ -5,10 +5,11 @@ import './Home.css';
 const Home = () => {
   return (
     <div className="home-container">
+      {/* Primary landing page header navigation */}
       <header className="home-header">
         <nav className="home-nav">
           <div className="nav-container">
-            <h1 className="logo">Felicity</h1>
+            <h1 className="logo" aria-label="Felicity Platform">Felicity</h1>
             <div className="nav-links">
               <Link to="/events" className="nav-link">Browse Events</Link>
               <Link to="/clubs" className="nav-link">Clubs</Link>
