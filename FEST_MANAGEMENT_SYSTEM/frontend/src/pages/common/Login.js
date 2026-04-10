@@ -7,7 +7,7 @@ import './Auth.css';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login } = useAuth(); // AuthContext hook for global user state
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -15,6 +15,7 @@ const Login = () => {
   });
   const [loading, setLoading] = useState(false);
 
+  // Destructure for cleaner access in JSX
   const { email, password, role } = formData;
 
   const handleChange = (e) => {
